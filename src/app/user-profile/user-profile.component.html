@@ -1,0 +1,65 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form  #userForm="ngForm">
+                          <div class="row">
+                              
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="password" [(ngModel)]="currentuser.password" name="password">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" type="email"[(ngModel)]="currentuser.email" name = "email">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Fist Name" type="text"[(ngModel)]="currentuser.firstname" name = "firstname">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Last Name" type="text"[(ngModel)]="currentuser.lastname" name = "lastname">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                        
+                     
+                         
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="updateuserprofile()" [disabled]="!(userForm.valid && userForm.dirty)">Update Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="javascript:void(0)">
+                          <img class="img" src="./assets/img/faces/marc.jpg" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category text-gray">{{currentuser.roles}}</h6>
+                      <h4 class="card-title">{{currentuser.firstname}}</h4>
+                      <p class="card-description">
+                         {{currentuser.date}}
+                      </p>
+                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

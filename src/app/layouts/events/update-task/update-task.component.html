@@ -1,0 +1,73 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Update Task</h4>
+                        <p class="card-category">Complete your Task</p>
+                    </div>
+                    <div class="card-body">
+                        <form #eventForm= "ngForm" >
+                            <div class="row">
+
+                                <div class="col">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="task" type="text" autocomplete="task" required  [(ngModel)] = "event.tache" name ="tache">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col">
+                                 
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>status</mat-label>
+                                        <mat-select required  [(ngModel)] = "event.etat" name ="etat">
+                                          <mat-option *ngFor="let e of etat" [value]="e">
+                                            {{e}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="startDate" type="datetime-local" required [(ngModel)] = "event.start" name ="start">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="endDate" type="datetime-local" required  [(ngModel)] = "event.end" name ="end">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col">
+                                 
+                              <mat-form-field appearance="fill">
+                                  <mat-label>technician</mat-label>
+                                  <mat-select required  [(ngModel)] = "event.technicien" name ="technicien">
+                                    <mat-option *ngFor="let e of techList" [value]="e.userId">
+                                      {{e.firstname}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                          </div>
+                          <div class="col">
+                            <mat-form-field class="example-full-width">
+                              <input matInput placeholder="Add Note" type="text" autocomplete="add note" required  [(ngModel)] = "event.note" name ="note">
+                            </mat-form-field>
+                        </div>
+                      </div>
+                           
+                                   <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="updatetask()">update Task</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+  

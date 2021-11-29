@@ -1,0 +1,67 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">create Task</h4>
+                        <p class="card-category">Complete your Task</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="eventForm">
+                            <div class="row">
+
+                                <div class="col">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="task" type="text" autocomplete="task" required formControlName="tache">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col">
+                                 
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>status</mat-label>
+                                        <mat-select required formControlName="etat">
+                                          <mat-option *ngFor="let e of etat" [value]="e">
+                                            {{e}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="startDate" type="datetime-local" required formControlName="start">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="endDate" type="datetime-local" required formControlName="end">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                 
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>status</mat-label>
+                                        <mat-select required formControlName="technicien">
+                                          <mat-option *ngFor="let e of techList" [value]="e.userId">
+                                            {{e.firstname}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+                                   <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="createtask()" [disabled]="!eventForm.valid">Add technician</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,85 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">User List</h4>
+                        <p class="card-category">Technician List</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        FirstName
+                                    </th>
+                                    <th>
+                                        lastName
+                                    </th>
+                                    <th>
+                                        email
+                                    </th>
+                                    <th>
+                                        date_join 
+                                    </th>
+                                    <th>
+                                      Action 
+                                  </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of listuser">
+                                        <td>
+                                            {{user.userId}}
+                                        </td>
+                                        <td>
+                                          {{user.firstname}}
+                                        </td>
+                                        <td>
+                                          {{user.lastname}}
+                                        </td>
+                                        <td>
+                                          {{user.email}}
+                                        </td>
+                                        <td class="text-primary">
+                                          {{user.date| date:"MM/dd/yy"}}
+                                        </td>
+                                        
+                                        <td>
+                                            <div class="row">
+                                              <div class="col">
+                                                  <div class="example-button-container">
+                                                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click) = edit(user.userId)>
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                                <div class="col">
+                                          <div class="example-button-container">
+                                              <button mat-fab color="warn"  aria-label="Example icon button with a delete icon" (click)="deleteUser(user.userId)">
+                                                  <i class="material-icons">delete</i>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          
+                                          </div>
+                                        </td>
+                                    </tr>
+                                  
+                                  
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+  
